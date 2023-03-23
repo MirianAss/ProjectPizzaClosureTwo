@@ -8,7 +8,7 @@
 import UIKit
 
 class TableViewPizzaViewController: UIViewController {
-
+    
     @IBOutlet weak var tableView: UITableView!
     
     var arrayPizza: Pizza?
@@ -17,7 +17,8 @@ class TableViewPizzaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
@@ -26,7 +27,7 @@ class TableViewPizzaViewController: UIViewController {
             self.tableView.reloadData()
         }
     }
-
+    
 }
 extension TableViewPizzaViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,6 +45,14 @@ extension TableViewPizzaViewController: UITableViewDataSource {
         return UITableViewCell()
     }
     
-    
-    
+}
+extension TableViewPizzaViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let screen = self.storyboard?.instantiateViewController(withIdentifier: "rating") as? ScreenRatingViewController {
+            
+            screen.rating = self.arrayPizza?[indexPath.row]
+            
+            self.navigationController?.pushViewController(screen, animated: true)
+        }
+    }
 }
