@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,5 +42,57 @@
             </objects>
             <point key="canvasLocation" x="35.877862595419849" y="3.5211267605633805"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Jaw-Z3-Yce">
+            <objects>
+                <navigationController storyboardIdentifier="navigation" useStoryboardIdentifierAsRestorationIdentifier="YES" id="828-ON-2Sy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="p4q-Go-ZsE">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UVO-5b-S7R" kind="relationship" relationship="rootViewController" id="I45-WP-nOQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dsE-gb-Rvf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724" y="4"/>
+        </scene>
+        <!--Table View Pizza View Controller-->
+        <scene sceneID="HXe-DD-Jvl">
+            <objects>
+                <viewController id="UVO-5b-S7R" customClass="TableViewPizzaViewController" customModule="ProjectPizzaClosureTwo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z2B-I4-5Ae">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="mp5-tj-gD6">
+                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="t2S-NW-daW"/>
+                        <color key="backgroundColor" red="1" green="0.19574536870000001" blue="0.1052838109" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mp5-tj-gD6" firstAttribute="leading" secondItem="t2S-NW-daW" secondAttribute="leading" id="Edf-ag-pXD"/>
+                            <constraint firstItem="mp5-tj-gD6" firstAttribute="top" secondItem="t2S-NW-daW" secondAttribute="top" id="I2I-Ff-PqU"/>
+                            <constraint firstItem="t2S-NW-daW" firstAttribute="bottom" secondItem="mp5-tj-gD6" secondAttribute="bottom" id="a0y-23-PGl"/>
+                            <constraint firstItem="t2S-NW-daW" firstAttribute="trailing" secondItem="mp5-tj-gD6" secondAttribute="trailing" id="eY9-a1-BRX"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MaJ-DN-HhJ"/>
+                    <connections>
+                        <outlet property="tableView" destination="mp5-tj-gD6" id="jKp-zL-7PP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7Qr-mH-dTK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="4"/>
+        </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
